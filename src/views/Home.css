@@ -1,0 +1,101 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.header {
+    width: max-content;
+    background: #e8e8a4;
+    border-radius: 120px;
+    padding: 5px 13px;
+    z-index: 1;
+}
+#header_title {
+    font-size: 32px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.load_more {
+    color: #009688;
+    font-weight: 900;
+    margin: auto;
+    cursor: pointer;
+}
+.filter {
+    padding: 12px;
+    border: 2px solid #009688;
+    border-radius: 6px;
+    color: #009688;
+    font-weight: 900;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.search_icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 30px;
+    background: #009688;
+    border-radius: 4px;
+}
+.modal {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, 0%);
+    width: 500px;
+    border: 3px solid grey;
+    border-radius: 8px;
+    background: white;
+}
+.modal_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    padding: 8px;
+}
+.modal_title {
+    font-size: 32px;
+    font-weight: 600;
+}
+.modal_date {
+    color: grey;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+.modal_comment {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+.modal_score {
+    color: #009688;
+    margin-right: auto;
+}
+.close_button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+.dropdown-menu {
+    list-style-type: none;
+    background: white;
+    overflow-y: auto;
+    max-height: 150px;
+    color: gray;
+    border: 1px solid rgba(154, 154, 143,0.5);
+    max-width: 200px;
+}
+.filter_by {
+    margin-bottom: 16px;
+    color: grey;
+    font-weight: 600;
+}

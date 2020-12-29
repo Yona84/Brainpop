@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Home_V2 from "../views/Home_V2.vue";
 import Vuesax from "vuesax";
 import axios from "axios";
 import VueAxios from "vue-axios";
@@ -16,6 +17,11 @@ const routes = [
     path: "/",
     name: "home",
     component: Home
+  },
+  {
+    path: "/API_V2",
+    name: "home_V2",
+    component: Home_V2
   }
 ];
 

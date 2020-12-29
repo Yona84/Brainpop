@@ -38,7 +38,6 @@
       </div>
       <img class="search_icon" src="../assets/icons/search.svg" alt="search_icon" />
     </div>
-    <div class="filter_by">Filter By</div>
     <div :style="{ display: 'flex', alignItems: 'center', marginBottom: '16px' }">
       <div
         :style="{
@@ -222,7 +221,7 @@ export default {
       }
     },
     fetchActivities() {
-      const myRequest = new Request("http://localhost:3000/activities/v1");
+      const myRequest = new Request("http://localhost:3000/activities/v2");
 
       fetch(myRequest)
         .then(response => {
@@ -230,13 +229,14 @@ export default {
         })
         .then(data => {
           this.activities = data.map(activity => ({
-            ...activity,
-            d_created: moment.unix(activity.d_created).format("lll"),
-            image_name: this.getProperImageSrc(activity["topic_data"].icon_path),
-            show_score: this.setHandleScoreModalByType(activity["resource_type"]).score,
-            show_zoom: this.setHandleScoreModalByType(activity["resource_type"]).zoom,
+            ...activity.activities.map(activity => {
+              return activity;
+            })[0],
+            d_created: moment.unix(activity.activities[0].d_created).format("lll"),
+            image_name: this.getProperImageSrc(activity.activities[0]["topic_data"].icon_path),
+            resource_type: activity["resource_type"],
             title:
-              this.capitalFirstLatterOfString(activity["topic_data"].name) +
+              this.capitalFirstLatterOfString(activity.activities[0]["topic_data"].name) +
               " " +
               this.capitalFirstLatterOfString(activity["resource_type"])
           }));
