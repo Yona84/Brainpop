@@ -234,6 +234,8 @@ export default {
             })[0],
             d_created: moment.unix(activity.activities[0].d_created).format("lll"),
             image_name: this.getProperImageSrc(activity.activities[0]["topic_data"].icon_path),
+            show_score: this.setHandleScoreModalByType(activity["resource_type"]).score,
+            show_zoom: this.setHandleScoreModalByType(activity["resource_type"]).zoom,
             resource_type: activity["resource_type"],
             title:
               this.capitalFirstLatterOfString(activity.activities[0]["topic_data"].name) +
